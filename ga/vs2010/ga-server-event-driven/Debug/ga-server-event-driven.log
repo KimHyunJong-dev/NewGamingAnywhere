@@ -1,0 +1,18 @@
+﻿  ga-server-event-driven.cpp
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\deps.win32\include\easyhook.h(37): warning C4005: 'NTDDI_VERSION' : 매크로 재정의
+          명령줄 인수 :  'NTDDI_VERSION'의 이전 정의를 참조하십시오.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\deps.win32\include\easyhook.h(38): warning C4005: '_WIN32_WINNT' : 매크로 재정의
+          명령줄 인수 :  '_WIN32_WINNT'의 이전 정의를 참조하십시오.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\ga-server-event-driven.cpp(52): warning C4996: '_splitpath': This function or variable may be unsafe. Consider using _splitpath_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdlib.h(791) : '_splitpath' 선언을 참조하십시오.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\ga-server-event-driven.cpp(30): warning C4101: 'startupInfo' :참조되지 않은 지역 변수입니다.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\ga-server-event-driven.cpp(31): warning C4101: 'hDLL' :참조되지 않은 지역 변수입니다.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\ga-server-event-driven.cpp(33): warning C4101: 'uninstall_hook' :참조되지 않은 지역 변수입니다.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\ga-server-event-driven.cpp(29): warning C4101: 'procInfo' :참조되지 않은 지역 변수입니다.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\ga-server-event-driven.cpp(32): warning C4101: 'install_hook' :참조되지 않은 지역 변수입니다.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\ga-server-event-driven.cpp(173): warning C4996: '_splitpath': This function or variable may be unsafe. Consider using _splitpath_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdlib.h(791) : '_splitpath' 선언을 참조하십시오.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\ga-server-event-driven.cpp(179): warning C4996: '_splitpath': This function or variable may be unsafe. Consider using _splitpath_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdlib.h(791) : '_splitpath' 선언을 참조하십시오.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\ga-server-event-driven.cpp(143): warning C4101: 'buf' :참조되지 않은 지역 변수입니다.
+  ga-server-event-driven.vcxproj -> D:\pegasus_work\KT_System\GamingAnywhere\GamingAnywhere\ga\vs2010\Debug\ga-server-event-driven.exe

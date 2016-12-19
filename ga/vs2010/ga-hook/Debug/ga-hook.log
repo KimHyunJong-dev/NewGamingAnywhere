@@ -1,0 +1,43 @@
+﻿  hook-function.cpp
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\hook-function.cpp(201): warning C4101: 'j' :참조되지 않은 지역 변수입니다.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\hook-function.cpp(740): warning C4101: 'j' :참조되지 않은 지역 변수입니다.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\hook-function.cpp(822): warning C4101: 'j' :참조되지 않은 지역 변수입니다.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\hook-function.cpp(879): warning C4018: '<' : signed 또는 unsigned가 일치하지 않습니다.
+  ga-hook.cpp
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\deps.win32\include\easyhook.h(37): warning C4005: 'NTDDI_VERSION' : 매크로 재정의
+          명령줄 인수 :  'NTDDI_VERSION'의 이전 정의를 참조하십시오.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\deps.win32\include\easyhook.h(38): warning C4005: '_WIN32_WINNT' : 매크로 재정의
+          명령줄 인수 :  '_WIN32_WINNT'의 이전 정의를 참조하십시오.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\ga-hook.cpp(96): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdlib.h(433) : 'getenv' 선언을 참조하십시오.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\ga-hook.cpp(394): warning C4101: 'resolution' :참조되지 않은 지역 변수입니다.
+  ga-hook-sdl.cpp
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\ga-hook-sdl.cpp(637): warning C4244: '=' : 'unsigned short'에서 'uint8_t'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\ga-hook-sdl.cpp(675): warning C4244: '=' : 'double'에서 'uint16_t'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\ga-hook-sdl.cpp(676): warning C4244: '=' : 'double'에서 'uint16_t'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\ga-hook-sdl.cpp(692): warning C4244: '=' : 'double'에서 'uint16_t'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\ga-hook-sdl.cpp(693): warning C4244: '=' : 'double'에서 'uint16_t'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\ga-hook-sdl.cpp(715): warning C4244: '=' : 'double'에서 'uint16_t'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\ga-hook-sdl.cpp(716): warning C4244: '=' : 'double'에서 'uint16_t'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\ga-hook-sdl.cpp(717): warning C4244: '=' : 'double'에서 'int16_t'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\ga-hook-sdl.cpp(718): warning C4244: '=' : 'double'에서 'int16_t'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  ga-hook-sdlaudio.cpp
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\ga-hook-sdlaudio.cpp(219): warning C4244: '=' : 'int64_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  ga-hook-coreaudio.cpp
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\ga-hook-coreaudio.cpp(144): warning C4244: '=' : 'int64_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\ga-hook-coreaudio.cpp(205): warning C4244: '=' : 'int64_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  ga-hook-common.cpp
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\deps.win32\include\easyhook.h(37): warning C4005: 'NTDDI_VERSION' : 매크로 재정의
+          명령줄 인수 :  'NTDDI_VERSION'의 이전 정의를 참조하십시오.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\deps.win32\include\easyhook.h(38): warning C4005: '_WIN32_WINNT' : 매크로 재정의
+          명령줄 인수 :  '_WIN32_WINNT'의 이전 정의를 참조하십시오.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\ga-hook-common.cpp(444): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdlib.h(433) : 'getenv' 선언을 참조하십시오.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\ga-hook-common.cpp(450): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdlib.h(433) : 'getenv' 선언을 참조하십시오.
+  ctrl-sdl.cpp
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\ctrl-sdl.cpp(630): warning C4244: '초기화 중' : 'long'에서 'unsigned short'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\server\event-driven\ctrl-sdl.cpp(649): warning C4244: '초기화 중' : 'long'에서 'unsigned short'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
+     D:\pegasus_work\KT_System\GamingAnywhere\GamingAnywhere\ga\vs2010\Debug\ga-hook.lib 라이브러리 및 D:\pegasus_work\KT_System\GamingAnywhere\GamingAnywhere\ga\vs2010\Debug\ga-hook.exp 개체를 생성하고 있습니다.
+  ga-hook.vcxproj -> D:\pegasus_work\KT_System\GamingAnywhere\GamingAnywhere\ga\vs2010\Debug\ga-hook.dll

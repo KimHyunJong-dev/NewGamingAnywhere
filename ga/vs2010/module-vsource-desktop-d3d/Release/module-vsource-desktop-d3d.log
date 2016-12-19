@@ -1,0 +1,6 @@
+﻿  ga-win32-common.cpp
+  ga-win32-d3d.cpp
+..\..\module\vsource-desktop\ga-win32-d3d.cpp(25): fatal error C1083: 포함 파일을 열 수 없습니다. 'd3dx9tex.h': No such file or directory
+  vsource-desktop.cpp
+..\..\module\vsource-desktop\vsource-desktop.cpp(218): warning C4244: '+=' : '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+..\..\module\vsource-desktop\vsource-desktop.cpp(175): warning C4101: 'tv' :참조되지 않은 지역 변수입니다.

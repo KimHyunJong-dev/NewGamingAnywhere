@@ -1,0 +1,39 @@
+﻿빌드 시작: 2016-12-01 오전 11:56:05
+     1>3 노드의 "D:\개발\GamingAnyWhere\ga\vs2010\xs-service\xs-service.vcxproj" 프로젝트(rebuild 대상)입니다.
+     1>_PrepareForClean:
+         "Debug\xs-service.lastbuildstate" 파일을 삭제하고 있습니다.
+       InitializeBuildStatus:
+         "AlwaysCreate"이(가) 지정되었기 때문에 "Debug\xs-service.unsuccessfulbuild"을(를) 만들고 있습니다.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I..\..\core /I..\..\..\deps.win32\include /I"C:\Program Files (x86)\Microsoft DirectX SDK\Include" /I..\..\..\deps.win32\include\SDL /I..\..\..\deps.win32\include\live555 /ZI /nologo /W3 /WX- /Od /Oy- /D GA_SERVER /D WIN32 /D USE_GA_WIN32_MACRO /D __STDC_CONSTANT_MACROS /D FF_API_OLD_AVIO=0 /D PIPELINE_FILTER /D _WIN32_WINNT=0x0501 /D NTDDI_VERSION=0x05010000 /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Prgram.cpp Program.cpp ServiceBase.cpp ServiceInstaller.cpp
+         ServiceInstaller.cpp
+         ServiceBase.cpp
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\cstdio(48): warning C4995: 'gets': 이름이 #pragma deprecated로 표시되었습니다.
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\cstdio(52): warning C4995: 'sprintf': 이름이 #pragma deprecated로 표시되었습니다.
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\cstdio(55): warning C4995: 'vsprintf': 이름이 #pragma deprecated로 표시되었습니다.
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\cstring(21): warning C4995: 'strcat': 이름이 #pragma deprecated로 표시되었습니다.
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\cstring(22): warning C4995: 'strcpy': 이름이 #pragma deprecated로 표시되었습니다.
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\cwchar(30): warning C4995: 'swprintf': 이름이 #pragma deprecated로 표시되었습니다.
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\cwchar(31): warning C4995: 'vswprintf': 이름이 #pragma deprecated로 표시되었습니다.
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\cwchar(33): warning C4995: 'wcscat': 이름이 #pragma deprecated로 표시되었습니다.
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\cwchar(35): warning C4995: 'wcscpy': 이름이 #pragma deprecated로 표시되었습니다.
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\string(757): warning C4995: 'swprintf': 이름이 #pragma deprecated로 표시되었습니다.
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\string(766): warning C4995: 'swprintf': 이름이 #pragma deprecated로 표시되었습니다.
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\string(775): warning C4995: 'swprintf': 이름이 #pragma deprecated로 표시되었습니다.
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\intrin.h(1087): warning C4995: 'wcscat': 이름이 #pragma deprecated로 표시되었습니다.
+     1>c:\program files (x86)\microsoft visual studio 10.0\vc\include\intrin.h(1089): warning C4995: 'wcscpy': 이름이 #pragma deprecated로 표시되었습니다.
+         Program.cpp
+     1>d:\개발\gaminganywhere\ga\vs2010\xs-service\program.cpp(20): warning C4007: 'WinMain' : '__stdcall'이어야 합니다.
+         Prgram.cpp
+         코드를 생성하고 있습니다...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\개발\GamingAnyWhere\ga\vs2010\Debug\xs-service.exe" /NOLOGO /LIBPATH:..\..\..\deps.win32\lib /LIBPATH:"D:\개발\GamingAnyWhere\ga\vs2010\Debug\\" libga.lib ws2_32.lib SDL2.lib swscale.lib swresample.lib postproc.lib avdevice.lib avfilter.lib avformat.lib avcodec.lib avutil.lib pthreadVC2.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\xs-service.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\개발\GamingAnyWhere\ga\vs2010\Debug\xs-service.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\개발\GamingAnyWhere\ga\vs2010\Debug\xs-service.lib" /MACHINE:X86 Debug\Prgram.obj
+         Debug\Program.obj
+         Debug\ServiceBase.obj
+         Debug\ServiceInstaller.obj
+     1>LINK : fatal error LNK1104: 'libga.lib' 파일을 열 수 없습니다.
+     1>"D:\개발\GamingAnyWhere\ga\vs2010\xs-service\xs-service.vcxproj" 프로젝트를 빌드했습니다(rebuild 대상). - 실패
+
+빌드하지 못했습니다.
+
+경과 시간: 00:00:02.66

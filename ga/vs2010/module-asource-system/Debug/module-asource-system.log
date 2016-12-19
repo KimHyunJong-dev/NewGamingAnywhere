@@ -1,0 +1,9 @@
+﻿  ga-win32-wasapi.cpp
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\module\asource-system\ga-win32-wasapi.cpp(180): warning C4101: 'beforeSleep' :참조되지 않은 지역 변수입니다.
+  asource-system.cpp
+d:\pegasus_work\kt_system\gaminganywhere\gaminganywhere\ga\module\asource-system\asource-system.cpp(126): warning C4996: 'strerror': This function or variable may be unsafe. Consider using strerror_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+          c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(157) : 'strerror' 선언을 참조하십시오.
+  코드를 생성하고 있습니다...
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(990,5): warning MSB8012: TargetPath(D:\pegasus_work\KT_System\GamingAnywhere\GamingAnywhere\ga\vs2010\Debug\asource-system.dll)이(가) Linker의 OutputFile 속성 값(D:\pegasus_work\KT_System\GamingAnywhere\GamingAnywhere\ga\vs2010\Debug\mod\asource-system.dll)과 일치하지 않습니다. 이로 인해 프로젝트가 잘못 빌드될 수 있습니다. 이를 수정하려면 $(OutDir), $(TargetName) 및 $(TargetExt) 속성 값이 %(Link.OutputFile)에 지정된 값과 일치해야 합니다.
+     D:\pegasus_work\KT_System\GamingAnywhere\GamingAnywhere\ga\vs2010\Debug\asource-system.lib 라이브러리 및 D:\pegasus_work\KT_System\GamingAnywhere\GamingAnywhere\ga\vs2010\Debug\asource-system.exp 개체를 생성하고 있습니다.
+  module-asource-system.vcxproj -> D:\pegasus_work\KT_System\GamingAnywhere\GamingAnywhere\ga\vs2010\Debug\asource-system.dll

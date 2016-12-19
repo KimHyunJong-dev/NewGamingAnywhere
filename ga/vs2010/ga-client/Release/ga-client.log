@@ -1,0 +1,11 @@
+﻿  ctrl-sdl.cpp
+  ga-client.cpp
+..\..\client\ga-client.cpp(134): warning C4244: 'return' : 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+..\..\client\ga-client.cpp(139): warning C4244: 'return' : 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  minih264.cpp
+  minivp8.cpp
+  qosreport.cpp
+  rtspclient.cpp
+  코드를 생성하고 있습니다.
+  코드를 생성했습니다.
+  ga-client.vcxproj -> D:\pegasus_work\KT_System\GamingAnywhere\GamingAnywhere\ga\vs2010\Release\ga-client.exe
