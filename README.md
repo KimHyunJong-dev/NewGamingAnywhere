@@ -52,8 +52,7 @@ control-relative-mosue-mode (enable, disable)
 마우스를 어떤 방식으로 제어할 지 결정하는 설정입니다.
 enable 로 설정하시게 되면, relative 한 위치에서 마우스를 제어하실 수 있습니다. 
 enable 모드를 설정하시면 서버에서 capture_mouse 설정을 enable 로 주셔야 합니다.
-
-fullscreen : 클라이언트를 전체화면으로 실행할 지 결정하는 설정입니다.
+fullscreen 항목추가: 클라이언트를 전체화면으로 실행할 지 결정하는 설정입니다.
 
 * Documents
 
