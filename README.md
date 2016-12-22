@@ -26,15 +26,15 @@ can be ported to other OS's including OS X and Android.
 * Memo
 
 프로젝트 빌드 설정  ( 참조: http://gaminganywhere.org/doc/quick_start.html)
-
 작업 환경은 Visual Studio 2015 입니다.
 
-* 의존성 설치 -
-DirectX - https://www.microsoft.com/en-us/download/details.aspx?id=6812 
+* 의존성 설치 
 
-MicrosoftSDK - https://www.microsoft.com/en-us/download/details.aspx?id=8279
+- DirectX - https://www.microsoft.com/en-us/download/details.aspx?id=6812 
+
+- MicrosoftSDK - https://www.microsoft.com/en-us/download/details.aspx?id=8279
  
-1. VisualStudio 2015 을 통해 프로젝트를 엽니다. -> 컴파일러를 업데이트 할 거냐는 문구가 나옵니다. -> 아니오 눌러주시면 됩니다.
+1. VisualStudio 2015 을 통해 프로젝트를 엽니다.
 2. 솔루션 전체 빌드를 통해 문제가 있는 프로젝트를 선별합니다.
 3. 발견된 프로젝트 오른쪽 클릭 -> 속성에 들어갑니다.
 4. C/C++ 메뉴를 클릭하신 후에 추가 포함 디렉토리 (DirectX)에서 경로를 설정합니다.
