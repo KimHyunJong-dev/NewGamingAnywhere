@@ -623,6 +623,7 @@ ProcessEvent(SDL_Event *event) {
 	case SDL_WINDOWEVENT:
 		if(event->window.event == SDL_WINDOWEVENT_CLOSE) {
 			rtspThreadParam.running = false;
+			//SDL_ShowSimpleMessageBox(NULL, "title", "content", rtspThreadParam.surface[0]);
 			return;
 		} else if(event->window.event == SDL_WINDOWEVENT_SIZE_CHANGED) {
 			mi = windowId2ch.find(event->window.windowID);
@@ -670,7 +671,7 @@ ProcessEvent(SDL_Event *event) {
 		break;
 #endif /* SDL_VERSION_ATLEAST(2,0,0) */
 	case SDL_QUIT:
-		rtspThreadParam.running = false;
+		rtspThreadParam.running = true;
 		return;
 	default:
 		// do nothing
@@ -744,7 +745,7 @@ int WinMain(HINSTANCE hInstance,
 	char savefile_keyts[128];
 	//
 #ifdef _DEBUG
-	__argv[1] = "D:\\°³¹ß\\GA\\ga\\vs2010\\Debug\\config\\client.abs.conf";
+	__argv[1] = "D:\\Develop\\GamingAnyWhere\\bin\\config\\client.abs.conf";
 	__argv[2] = "rtsp://123.140.74.178:8554/desktop";
 #endif
 #ifdef ANDROID

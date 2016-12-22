@@ -191,8 +191,11 @@ test_reconfig(void *) {
 }
 #endif
 
-int
-main(int argc, char *argv[]) {
+int WinMain(HINSTANCE hInstance,
+	HINSTANCE hPrevInstance,
+	LPSTR    lpCmdLine,
+	int       nCmdShow)
+{
 	int notRunning = 0;
 #ifdef WIN32
 	if (CoInitializeEx(NULL, COINIT_MULTITHREADED) < 0) {
@@ -201,12 +204,12 @@ main(int argc, char *argv[]) {
 	}
 #endif
 	//
-	if (argc < 2) {
-		fprintf(stderr, "usage: %s config-file\n", argv[0]);
+	if (__argc < 2) {
+		fprintf(stderr, "usage: %s config-file\n", __argv[0]);
 		return -1;
 	}
 	//
-	if (ga_init(argv[1], NULL) < 0) { return -1; }
+	if (ga_init(__argv[1], NULL) < 0) { return -1; }
 	//
 	ga_openlog();
 	//

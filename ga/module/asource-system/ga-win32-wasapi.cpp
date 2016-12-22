@@ -1,20 +1,20 @@
 /*
- * Copyright (c) 2013 Chun-Ying Huang
- *
- * This file is part of GamingAnywhere (GA).
- *
- * GA is free software; you can redistribute it and/or modify it
- * under the terms of the 3-clause BSD License as published by the
- * Free Software Foundation: http://directory.fsf.org/wiki/License:BSD_3Clause
- *
- * GA is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- *
- * You should have received a copy of the 3-clause BSD License along with GA;
- * if not, write to the Free Software Foundation, Inc.,
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
- */
+* Copyright (c) 2013 Chun-Ying Huang
+*
+* This file is part of GamingAnywhere (GA).
+*
+* GA is free software; you can redistribute it and/or modify it
+* under the terms of the 3-clause BSD License as published by the
+* Free Software Foundation: http://directory.fsf.org/wiki/License:BSD_3Clause
+*
+* GA is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+*
+* You should have received a copy of the 3-clause BSD License along with GA;
+* if not, write to the Free Software Foundation, Inc.,
+* 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -43,17 +43,18 @@ const IID IID_IAudioCaptureClient = __uuidof(IAudioCaptureClient);
 static int
 check_wave_format(ga_wasapi_param *wparam) {
 	WAVEFORMATEX *pwfx = wparam->pwfx;
-	WAVEFORMATEXTENSIBLE *ext = (WAVEFORMATEXTENSIBLE*) wparam->pwfx;
+	WAVEFORMATEXTENSIBLE *ext = (WAVEFORMATEXTENSIBLE*)wparam->pwfx;
 	//
-	if(pwfx->wFormatTag == WAVE_FORMAT_EXTENSIBLE) {
-		if(ext->SubFormat == KSDATAFORMAT_SUBTYPE_IEEE_FLOAT) {
+	if (pwfx->wFormatTag == WAVE_FORMAT_EXTENSIBLE) {
+		if (ext->SubFormat == KSDATAFORMAT_SUBTYPE_IEEE_FLOAT) {
 			wparam->isFloat = 1;
-		} else if(ext->SubFormat != KSDATAFORMAT_SUBTYPE_PCM) {
+		}
+		else if (ext->SubFormat != KSDATAFORMAT_SUBTYPE_PCM) {
 			OLECHAR *guidstr;
 			char *in, *out, guid2[256];
 			StringFromCLSID(ext->SubFormat, &guidstr);
 			// because GUID is UTF-16LE?
-			for(in = (char*) guidstr, out = guid2; *in; in += 2) {
+			for (in = (char*)guidstr, out = guid2; *in; in += 2) {
 				*out++ = *in;
 			}
 			*out = '\0';
@@ -62,11 +63,12 @@ check_wave_format(ga_wasapi_param *wparam) {
 			CoTaskMemFree(guidstr);
 			return -1;
 		}
-	} else if(pwfx->wFormatTag != WAVE_FORMAT_PCM) {
+	}
+	else if (pwfx->wFormatTag != WAVE_FORMAT_PCM) {
 		ga_error("WAVEFORMATEX: non-PCM is not supported\n");
 		return -1;
 	}
-	if(pwfx->nChannels != 2) {
+	if (pwfx->nChannels != 2) {
 		ga_error("WAVEFORMATEX: channels = %d (!=2)\n",
 			pwfx->nChannels);
 		return -1;
@@ -74,19 +76,21 @@ check_wave_format(ga_wasapi_param *wparam) {
 	ga_error("WAVEFORMATEX: samplerate=%d, bitspersample=%d\n",
 		pwfx->nSamplesPerSec, pwfx->wBitsPerSample);
 	//
-	if(wparam->samplerate != pwfx->nSamplesPerSec) {
+	wparam->samplerate = pwfx->nSamplesPerSec;
+	if (wparam->samplerate != pwfx->nSamplesPerSec) {
 		ga_error("WAVEFORMATEX: audio sample rate mismatch (%d != %d)\n",
 			wparam->samplerate,
 			pwfx->nSamplesPerSec);
 		return -1;
 	}
 	//
-	if(wparam->isFloat) {
-		if(wparam->bits_per_sample != 16) {
+	if (wparam->isFloat) {
+		if (wparam->bits_per_sample != 16) {
 			ga_error("WAVEFORMATEX: [float] audio bits per sample mismatch (%d != 16)\n",
 				wparam->bits_per_sample);
 		}
-	} else if(wparam->bits_per_sample != pwfx->wBitsPerSample) {
+	}
+	else if (wparam->bits_per_sample != pwfx->wBitsPerSample) {
 		ga_error("WAVEFORMATEX: audio bits per sample mismatch (%d != %d)\n",
 			wparam->bits_per_sample,
 			pwfx->wBitsPerSample);
@@ -104,51 +108,51 @@ ga_wasapi_init(ga_wasapi_param *wasapi) {
 	hnsRequestedDuration = REQUESTED_DURATION;
 	//
 	hr = CoCreateInstance(
-			CLSID_MMDeviceEnumerator, NULL,
-			CLSCTX_ALL, IID_IMMDeviceEnumerator,
-			(void**) &wasapi->pEnumerator);
+		CLSID_MMDeviceEnumerator, NULL,
+		CLSCTX_ALL, IID_IMMDeviceEnumerator,
+		(void**)&wasapi->pEnumerator);
 	EXIT_ON_ERROR(hr, "WASAPI: CoCreateInstance failed.\n");
 
 	hr = wasapi->pEnumerator->GetDefaultAudioEndpoint(
-			eRender, eConsole, &wasapi->pDevice);
+		eRender, eConsole, &wasapi->pDevice);
 	EXIT_ON_ERROR(hr, "WASAPI: GetDefaultAudioEndpoint failed.\n");
 
 	hr = wasapi->pDevice->Activate(
-			IID_IAudioClient, CLSCTX_ALL,
-			NULL, (void**) &wasapi->pAudioClient);
+		IID_IAudioClient, CLSCTX_ALL,
+		NULL, (void**)&wasapi->pAudioClient);
 	EXIT_ON_ERROR(hr, "WASAPI: Activate device failed.\n");
 
 	hr = wasapi->pAudioClient->GetMixFormat(&wasapi->pwfx);
 	EXIT_ON_ERROR(hr, "WASAPI: GetMixFormat failed.\n");
 
 	// XXX: check pwfx against the audio configuration
-	if(check_wave_format(wasapi) < 0)
+	if (check_wave_format(wasapi) < 0)
 		goto quit;
 
 	hr = wasapi->pAudioClient->Initialize(
-			AUDCLNT_SHAREMODE_SHARED,
-			AUDCLNT_STREAMFLAGS_LOOPBACK/*0*/,
-			hnsRequestedDuration,
-			0,
-			wasapi->pwfx,
-			NULL);
+		AUDCLNT_SHAREMODE_SHARED,
+		AUDCLNT_STREAMFLAGS_LOOPBACK/*0*/,
+		hnsRequestedDuration,
+		0,
+		wasapi->pwfx,
+		NULL);
 	EXIT_ON_ERROR(hr, "WASAPI: Initialize audio client failed.\n");
 
 	// Get the size of the allocated buffer.
 	hr = wasapi->pAudioClient->GetBufferSize(&wasapi->bufferFrameCount);
 	EXIT_ON_ERROR(hr, "WASAPI: Get buffer size failed.\n");
 
-	wasapi->hnsActualDuration = (UINT32) ((double) REFTIMES_PER_SEC *
+	wasapi->hnsActualDuration = (UINT32)((double)REFTIMES_PER_SEC *
 		wasapi->bufferFrameCount / wasapi->pwfx->nSamplesPerSec);
-	wasapi->bufferFillInt = (DWORD) (wasapi->hnsActualDuration/REFTIMES_PER_MILLISEC/2);
+	wasapi->bufferFillInt = (DWORD)(wasapi->hnsActualDuration / REFTIMES_PER_MILLISEC / 2);
 
 	hr = wasapi->pAudioClient->GetService(
-			IID_IAudioCaptureClient,
-			(void**)&wasapi->pCaptureClient);
+		IID_IAudioCaptureClient,
+		(void**)&wasapi->pCaptureClient);
 	EXIT_ON_ERROR(hr, "WASAPI: Get service failed.\n");
 
 	// sync configurations with other platforms
-	wasapi->chunk_size = (wasapi->bufferFrameCount)/2;
+	wasapi->chunk_size = (wasapi->bufferFrameCount) / 2;
 	wasapi->bits_per_frame = wasapi->bits_per_sample * wasapi->channels;
 	wasapi->chunk_bytes = wasapi->chunk_size * wasapi->bits_per_frame;
 
@@ -182,9 +186,9 @@ ga_wasapi_read(ga_wasapi_param *wasapi, unsigned char *wbuf, int wframes) {
 	// frame statistics 
 	struct timeval currtv;
 	//
-	if(wasapi->firstRead.tv_sec == 0) {
+	if (wasapi->firstRead.tv_sec == 0) {
 		gettimeofday(&wasapi->firstRead, NULL);
-		wasapi->trimmedFrames = (UINT64) (1.0 * wasapi->samplerate *
+		wasapi->trimmedFrames = (UINT64)(1.0 * wasapi->samplerate *
 			tvdiff_us(&wasapi->firstRead, &wasapi->initialTimestamp) /
 			1000000);
 		wasapi->silenceFrom = wasapi->firstRead;
@@ -193,12 +197,13 @@ ga_wasapi_read(ga_wasapi_param *wasapi, unsigned char *wbuf, int wframes) {
 	}
 	//
 	gettimeofday(&currtv, NULL);
-	if(wasapi->lastTv.tv_sec == 0) {
+	if (wasapi->lastTv.tv_sec == 0) {
 		gettimeofday(&wasapi->lastTv, NULL);
 		wasapi->frames = 0;
 		wasapi->sframes = 0;
 		wasapi->slept = 0;
-	} else if(tvdiff_us(&currtv, &wasapi->lastTv) >= 1000000) {
+	}
+	else if (tvdiff_us(&currtv, &wasapi->lastTv) >= 1000000) {
 #if 0
 		ga_error(
 			"Frame statistics: s=%d, ns=%d, sum=%d (sleep=%d)\n",
@@ -210,10 +215,11 @@ ga_wasapi_read(ga_wasapi_param *wasapi, unsigned char *wbuf, int wframes) {
 		wasapi->frames = wasapi->sframes = wasapi->slept = 0;
 	}
 	//
-	if(wasapi->fillSilence > 0) {
-		if(wasapi->fillSilence <= wframes) {
-			copyframe = (int) wasapi->fillSilence;
-		} else {
+	if (wasapi->fillSilence > 0) {
+		if (wasapi->fillSilence <= wframes) {
+			copyframe = (int)wasapi->fillSilence;
+		}
+		else {
 			copyframe = wframes;
 		}
 		copysize = copyframe * wasapi->channels * dstunit;
@@ -222,7 +228,7 @@ ga_wasapi_read(ga_wasapi_param *wasapi, unsigned char *wbuf, int wframes) {
 		wasapi->fillSilence -= copyframe;
 		wframes -= copyframe;
 		wasapi->sframes += copyframe;
-		if(wframes <= 0) {
+		if (wframes <= 0) {
 			return copyframe;
 		}
 	}
@@ -230,49 +236,51 @@ ga_wasapi_read(ga_wasapi_param *wasapi, unsigned char *wbuf, int wframes) {
 	hr = wasapi->pCaptureClient->GetNextPacketSize(&packetLength);
 	EXIT_ON_ERROR(hr, "WASAPI: Get packet size failed.\n");
 	//
-	if(packetLength == 0) {
+	if (packetLength == 0) {
 		Sleep(wasapi->bufferFillInt);
 		gettimeofday(&afterSleep, NULL);
 		//
 		wasapi->slept++;
 		hr = wasapi->pCaptureClient->GetNextPacketSize(&packetLength);
 		EXIT_ON_ERROR(hr, "WASAPI: Get packet size failed.\n");
-		if(packetLength == 0) {
+		if (packetLength == 0) {
 			// fill silence
 			double silenceFrame = 1.0 *
 				tvdiff_us(&afterSleep, &wasapi->silenceFrom) *
 				wasapi->samplerate / 1000000.0;
-			wasapi->fillSilence += (UINT64) silenceFrame;
+			wasapi->fillSilence += (UINT64)silenceFrame;
 			wasapi->silenceFrom = afterSleep;
 		}
 	}
 	//
-	while(packetLength != 0 && wframes >= (int) packetLength) {
+	while (packetLength != 0 && wframes >= (int)packetLength) {
 		hr = wasapi->pCaptureClient->GetBuffer(&pData,
 			&numFramesAvailable, &flags, &framePos, NULL);
 		EXIT_ON_ERROR(hr, "WASAPI: Get buffer failed.\n");
-		
-		if(packetLength != numFramesAvailable) {
+
+		if (packetLength != numFramesAvailable) {
 			ga_error("WARNING: packetLength(%d) != numFramesAvailable(%d)\n",
 				packetLength, numFramesAvailable);
 		}
 
-		if(flags & AUDCLNT_BUFFERFLAGS_SILENT) {
+		if (flags & AUDCLNT_BUFFERFLAGS_SILENT) {
 			wasapi->sframes += numFramesAvailable;
 			ZeroMemory(&wbuf[copysize], numFramesAvailable * wasapi->channels * dstunit);
 			//ga_error("WASAPI-DEBUG: write slience (%d).\n", numFramesAvailable);
-		} else {
+		}
+		else {
 			wasapi->frames += numFramesAvailable;
-			if(wasapi->isFloat) {
-				float *r = (float*) (pData);
-				short *w = (short*) (&wbuf[copysize]);
+			if (wasapi->isFloat) {
+				float *r = (float*)(pData);
+				short *w = (short*)(&wbuf[copysize]);
 				int cc = numFramesAvailable * wasapi->channels;
-				for(i = 0; i < cc; i++) {
-					*w = (short) (*r * 32768.0);
+				for (i = 0; i < cc; i++) {
+					*w = (short)(*r * 32768.0);
 					r++;
 					w++;
 				}
-			} else {
+			}
+			else {
 				CopyMemory(&wbuf[copysize], pData, numFramesAvailable * wasapi->channels * dstunit);
 			}
 			//ga_error("WASAPI-DEBUG: write data (%d).\n", numFramesAvailable);
@@ -291,7 +299,7 @@ ga_wasapi_read(ga_wasapi_param *wasapi, unsigned char *wbuf, int wframes) {
 		filldata = true;
 	}
 	//
-	if(filldata) {
+	if (filldata) {
 		gettimeofday(&wasapi->silenceFrom, NULL);
 	}
 	//

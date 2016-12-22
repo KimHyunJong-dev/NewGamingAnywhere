@@ -54,7 +54,7 @@
   vsource.cpp
 ..\..\core\vsource.cpp(685): warning C4005: 'max' : 매크로 재정의
           C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\windef.h(190) : 'max'의 이전 정의를 참조하십시오.
-     D:\pegasus_work\KT_System\GamingAnywhere\GamingAnywhere\ga\vs2010\Release\libga.lib 라이브러리 및 D:\pegasus_work\KT_System\GamingAnywhere\GamingAnywhere\ga\vs2010\Release\libga.exp 개체를 생성하고 있습니다.
+     D:\Develop\GamingAnyWhere\ga\vs2010\Release\libga.lib 라이브러리 및 D:\Develop\GamingAnyWhere\ga\vs2010\Release\libga.exp 개체를 생성하고 있습니다.
   코드를 생성하고 있습니다.
   코드를 생성했습니다.
-  libga.vcxproj -> D:\pegasus_work\KT_System\GamingAnywhere\GamingAnywhere\ga\vs2010\Release\libga.dll
+  libga.vcxproj -> D:\Develop\GamingAnyWhere\ga\vs2010\Release\libga.dll

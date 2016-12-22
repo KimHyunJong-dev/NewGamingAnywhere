@@ -1,4 +1,5 @@
 ﻿  ga-server-periodic.cpp
+..\..\server\periodic\ga-server-periodic.cpp(198): warning C4007: 'WinMain' : '__stdcall'이어야 합니다.
   코드를 생성하고 있습니다.
   코드를 생성했습니다.
-  ga-server-periodic.vcxproj -> D:\pegasus_work\KT_System\GamingAnywhere\GamingAnywhere\ga\vs2010\Release\ga-server-periodic.exe
+  ga-server-periodic.vcxproj -> D:\개발\GamingAnyWhere\ga\vs2010\Release\ga-server-periodic.exe
