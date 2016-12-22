@@ -2,6 +2,7 @@ gaminganywhere
 ==============
 
 GamingAnywhere: An Open Cloud Gaming System
+
 * Overview
 GamingAnywhere is an open-source clouding gaming platform. In addition to its
 openness, we design GamingAnywhere for high extensibility, portability, and
@@ -23,13 +24,15 @@ can be ported to other OS's including OS X and Android.
 
 
 * Memo
-프로젝트 빌드 설정 (http://gaminganywhere.org/doc/quick_start.html)
+
+프로젝트 빌드 설정  ( 참조: http://gaminganywhere.org/doc/quick_start.html)
+
 작업 환경은 Visual Studio 2015 입니다.
 
 * 의존성 설치 -
-1. DirectX - https://www.microsoft.com/en-us/download/details.aspx?id=6812 
+DirectX - https://www.microsoft.com/en-us/download/details.aspx?id=6812 
 
-2. MicrosoftSDK - https://www.microsoft.com/en-us/download/details.aspx?id=8279
+MicrosoftSDK - https://www.microsoft.com/en-us/download/details.aspx?id=8279
  
 1. VisualStudio 2015 을 통해 프로젝트를 엽니다. -> 컴파일러를 업데이트 할 거냐는 문구가 나옵니다. -> 아니오 눌러주시면 됩니다.
 2. 솔루션 전체 빌드를 통해 문제가 있는 프로젝트를 선별합니다.
@@ -41,11 +44,11 @@ can be ported to other OS's including OS X and Android.
 * Gaming Anywhere 수정본 
 Gaming Anywhere 에서 사용할 수 있는 (파악한) config 설정은 아래와 같습니다.
 
-[Server]
-capture_mouse (enable, disable) : 마우스를 캡쳐할 지 말 지를 결정하는 설정입니다.
- 
-[Client]
-control-relative-mosue-mode (enable, disable) :
+[server.desktop.conf 설정]
+capture_cursor (enable, disable) : 마우스를 캡쳐할 지 말 지를 결정하는 설정입니다.
+
+[client.abs.conf 또는 client.rel.conf 설정]
+control-relative-mosue-mode (enable, disable) 
 마우스를 어떤 방식으로 제어할 지 결정하는 설정입니다.
 enable 로 설정하시게 되면, relative 한 위치에서 마우스를 제어하실 수 있습니다. 
 enable 모드를 설정하시면 서버에서 capture_mouse 설정을 enable 로 주셔야 합니다.
