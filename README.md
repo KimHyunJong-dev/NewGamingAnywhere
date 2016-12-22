@@ -42,16 +42,19 @@ can be ported to other OS's including OS X and Android.
 6. 솔루션 전체 빌드를 통해 빌드를 완료합니다.
 
 * Gaming Anywhere 수정본 
+
 Gaming Anywhere 에서 사용할 수 있는 (파악한) config 설정은 아래와 같습니다.
 
 [server.desktop.conf 설정]
-capture_cursor (enable, disable) : 마우스를 캡쳐할 지 말 지를 결정하는 설정입니다.
+capture_cursor (enable, disable) 항목
+마우스를 캡쳐할 지 말 지를 결정하는 설정입니다.
 
 [client.abs.conf 또는 client.rel.conf 설정]
 control-relative-mosue-mode (enable, disable) 
+
 마우스를 어떤 방식으로 제어할 지 결정하는 설정입니다.
 enable 로 설정하시게 되면, relative 한 위치에서 마우스를 제어하실 수 있습니다. 
-enable 모드를 설정하시면 서버에서 capture_mouse 설정을 enable 로 주셔야 합니다.
+enable 모드를 설정하시면 서버에서 capture_cursor 설정을 enable 로 주셔야 합니다.
 fullscreen 항목추가: 클라이언트를 전체화면으로 실행할 지 결정하는 설정입니다.
 
 * Documents
